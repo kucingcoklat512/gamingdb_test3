@@ -1,5 +1,8 @@
 from flask import Blueprint
 from controllers.PlatformController import get_platforms, get_platform, add_platform, update_platform, delete_platform
+from flask_cors import CORS
+
+CORS(blueprint_instance, resources={r"/*": {"origins": "https:/https://gamingdb-test4.vercel.app/"}}, supports_credentials=True)
 
 platform_bp = Blueprint('platform_bp', __name__)
 
