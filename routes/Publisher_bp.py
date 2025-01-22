@@ -1,5 +1,9 @@
 from flask import Blueprint
 from controllers.PublisherController import get_publishers, get_publisher, add_publisher, update_publisher, delete_publisher
+from flask_cors import CORS
+
+CORS(blueprint_instance, resources={r"/*": {"origins": "https:/https://gamingdb-test4.vercel.app/"}}, supports_credentials=True)
+
 
 publisher_bp = Blueprint('publisher_bp', __name__)
 
