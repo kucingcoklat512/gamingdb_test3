@@ -1,5 +1,8 @@
 from flask import Blueprint
 from controllers.GenreController import get_genres, get_genre, add_genre, update_genre, delete_genre
+from flask_cors import CORS
+
+CORS(blueprint_instance, resources={r"/*": {"origins": "https:/https://gamingdb-test4.vercel.app/"}}, supports_credentials=True)
 
 genre_bp = Blueprint('genre_bp', __name__)
 
