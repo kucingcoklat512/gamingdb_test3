@@ -1,5 +1,8 @@
 from flask import Blueprint
 from controllers.RatingController import get_ratings, get_rating, add_rating, update_rating, delete_rating
+from flask_cors import CORS
+
+CORS(blueprint_instance, resources={r"/*": {"origins": "https:/https://gamingdb-test4.vercel.app/"}}, supports_credentials=True)
 
 rating_bp = Blueprint('rating_bp', __name__)
 
