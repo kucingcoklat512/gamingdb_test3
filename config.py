@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 from flask_cors import CORS
+import logging
 
 # Initialize app and database connection
 app = Flask(__name__)
@@ -11,5 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://apigames2comp2_c
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['JWT_SECRET_KEY'] = 'test123'
 db = SQLAlchemy(app)
+
+logging.basicConfig(level=logging.DEBUG)
 
 app.app_context().push()
