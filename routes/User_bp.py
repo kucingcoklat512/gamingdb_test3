@@ -1,5 +1,8 @@
 from flask import Blueprint
 from controllers.UserController import login, get_users, get_user, update_user, patch_user, delete_user, add_user
+from flask_cors import CORS
+
+CORS(blueprint_instance, resources={r"/*": {"origins": "https:/https://gamingdb-test4.vercel.app/"}}, supports_credentials=True)
 
 user_bp = Blueprint('User_bp', __name__)
 
