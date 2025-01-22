@@ -5,7 +5,7 @@ from flask_cors import CORS
 
 
 game_bp = Blueprint('game_bp', __name__)
-CORS(blueprint_instance, resources={r"/*": {"origins": "https:/https://gamingdb-test4.vercel.app/"}}, supports_credentials=True)
+CORS(game_bp, resources={r"/*": {"origins": "https:/https://gamingdb-test4.vercel.app/"}}, supports_credentials=True)
 game_bp.route('/api/games', methods=['GET'])(get_games)
 game_bp.route('/api/games/<int:game_id>', methods=['GET'])(get_game)
 game_bp.route('/api/games', methods=['POST'])(add_game)
