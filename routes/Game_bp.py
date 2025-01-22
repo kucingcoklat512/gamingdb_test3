@@ -1,5 +1,8 @@
 from flask import Blueprint
 from controllers.GameController import get_games, get_game, add_game, update_game, patch_game, delete_game
+from flask_cors import CORS
+
+CORS(blueprint_instance, resources={r"/*": {"origins": "https:/https://gamingdb-test4.vercel.app/"}}, supports_credentials=True)
 
 game_bp = Blueprint('game_bp', __name__)
 
