@@ -13,8 +13,8 @@ from sqlalchemy import func
 
 @jwt_required()
 def get_games():
-    games = Game.query.order_by(func.random()).limit(10).all()
-    return jsonify([game.to_dict() for game in games])
+    games = Game.query.order_by(Game.name.asc()).all()
+    return jsonify({"data": {"games": [game.to_dict() for game in games]}})
 
 @jwt_required()
 def get_game(game_id):
